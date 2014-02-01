@@ -96,7 +96,7 @@ class ControllerFeedWebApi extends Controller {
 		}
 
 		if (isset($this->request->get['sort'])) {
-			$sort = "p." . $this->request->get['sort'];
+			$sort = $this->request->get['sort'];
 		} else {
 			$sort = 0;
 		}
