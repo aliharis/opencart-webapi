@@ -109,7 +109,7 @@ Answer:
 
 Request:
 
-  http://example.com/?route=feed/web_api/products&category=1
+  http://example.com/?route=feed/web_api/products&category=67&sort=p.date_added&order=DESC&start=0&limit=10&key=1442
 
 
 Params:
