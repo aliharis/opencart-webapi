@@ -115,7 +115,8 @@ Request:
 Params:
 
  * $_GET['category']: parent category id
- * $_GET['sort']: sort option ([p.date_added], pd.name, p.price)
+ * $GET['sort']: sort option (p.date_added, pd.name, p.price)
+ * $_GET['sort']: sort option (teadded, pd.name, p.price)
  * $_GET['order']: sort order (ASC, DESC)
  * $_GET['start']: row to start from (offset)
  * $_GET['limit']: limit
