@@ -1,11 +1,18 @@
 Opencart WEB API
 ================
 
-This is a small module that adds the ability to remotely work with the OpenCart 1.5.3+ via the REST API.
+This is a small module that adds the ability to remotely work with the OpenCart 1.5.6+ via the REST API.
 
- * Homepage: http://zenwalker.ru/lab/opencart-webapi/
- * Sources: https://github.com/ethernet1/opencart-webapi
- * Ddocumentation in Russian: http://zenwalker.ru/lab/opencart-webapi/documentation.html
+This module was originally developed by Zen Walker for OpenCart 1.5.3+. The project has been updated to support OpenCart 1.5.6+.
+
+Settings
+--------
+
+API Settings can be accessed from Admin Panel > Extensions > Product Feeds > Web API
+
+You can Enable/Disable API & Setup an API KEY for Authentication. When API Key is provided, a parameter named key must be added to the URL.
+
+Example: http://example.com/?route=feed/web_api/categories&parent=0&level=2&key=1234
 
 Features:
 
@@ -108,6 +115,10 @@ Request:
 Params:
 
  * $_GET['category']: parent category id
+ * $_GET['sort']: sort option (p.date_added, pd.name, p.price)
+ * $_GET['order']: sort order (ASC, DESC)
+ * $_GET['start']: row to start from (offset)
+ * $_GET['limit']: limit
 
 
 Answer:
