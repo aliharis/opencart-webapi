@@ -87,11 +87,49 @@ class ControllerFeedWebApi extends Controller {
 			$category_id = 0;
 		}
 
+		# -- $_GET params ------------------------------
+		
+		if (isset($this->request->get['category'])) {
+			$category_id = $this->request->get['category'];
+		} else {
+			$category_id = 0;
+		}
+
+		if (isset($this->request->get['sort'])) {
+			$sort = "p." . $this->request->get['sort'];
+		} else {
+			$sort = 0;
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 0;
+		}
+
+		if (isset($this->request->get['start'])) {
+			$start = $this->request->get['start'];
+		} else {
+			$start = 0;
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = 0;
+		}
+
 		# -- End $_GET params --------------------------
 
-		$products = $this->model_catalog_product->getProducts(array(
-			'filter_category_id'	=> $category_id
-		));
+		$data = array(
+			'filter_category_id' => $category_id, 
+			'sort'               => $sort,
+			'order'              => $order,
+			'start'              => $start,
+			'limit'              => $limit
+		);
+
+		$products = $this->model_catalog_product->getProducts($data);
 
 		foreach ($products as $product) {
 
